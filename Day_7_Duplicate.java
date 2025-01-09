@@ -13,7 +13,7 @@ class Solution {
     }
 }
 
-public class Day_7_Problems {
+public class Day_7_Duplicate {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
