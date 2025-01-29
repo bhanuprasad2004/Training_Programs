@@ -7,24 +7,20 @@ public class EquilibriumIndex {
     }
     public static void isEquilibrium(int[] arr) {
         
+    int totalsum = 0;
+    for (int i = 0; i < arr.length; i++) {
+        totalsum = totalsum + arr[i];
+    }
 
-        for (int i = 0;i <=arr.length-1;i++) {
-            int leftsum = 0;
-            int rightsum = 0;
-            for (int j = 0;j <= i-1; j++) {
-                leftsum = leftsum + arr[j];
-            }
-            for (int k = i + 1; k <= arr.length-1;k++) {
-                rightsum = rightsum + arr[k];
-            }
-        
+    int leftsum = 0;
+    for (int i = 0 ; i < arr.length; i++) {
+        int rightsum = 0;
+        rightsum = totalsum - arr[i] - leftsum;
         if (leftsum == rightsum) {
-            System.out.println("Equilibrium Index Found at : " + i);
-            System.out.println("The value Equilibrium Index is : "+ arr[i]);
-            return;
+            System.out.println("The Equilibrium Index is : "+ i);
+            System.out.println("The value of the Equilribrium is : "+arr[i]);
         }
-    } 
-    
-    System.out.println("Not Found");
+        leftsum = leftsum + arr[i];
+    }
     }
 }
